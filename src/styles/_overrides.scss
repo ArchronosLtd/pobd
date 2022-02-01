@@ -1,0 +1,7 @@
+.btn {
+  &.btn-primary,
+  &.btn-outline-primary:active,
+  &.btn-outline-primary:hover {
+    color: $white;
+  }
+}

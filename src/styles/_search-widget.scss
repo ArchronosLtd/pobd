@@ -1,0 +1,30 @@
+.sidebar-search {
+  > label {
+    @extend h2;
+  }
+
+  > div {
+    @extend .input-group;
+    border: none !important;
+
+    > input {
+      @extend .form-control;
+      border: 1px solid #ccc !important;
+      border-top-left-radius: 0.125em !important;
+      border-bottom-left-radius: 0.125em !important;
+    }
+
+    > button {
+      @extend .btn;
+      @extend .btn-outline-secondary;
+
+      &:hover,
+      &:active {
+        > svg {
+          stroke: $white !important;
+          fill: $white !important;
+        }
+      }
+    }
+  }
+}

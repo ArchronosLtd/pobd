@@ -1,0 +1,87 @@
+.em-booking {
+  .em-form-required {
+    color: $danger;
+  }
+
+  .em-booking-form-details {
+    @extend .w-100;
+  }
+
+  .em-booking-buttons {
+    > input {
+      @extend .btn;
+      @extend .btn-outline-primary;
+    }
+  }
+
+  p {
+    input,
+    select,
+    textarea,
+    label {
+      @extend .w-100;
+    }
+
+    label {
+      @extend .form-label;
+    }
+
+    > input, textarea {
+      @extend .form-control;
+    }
+
+    > select {
+      @extend .form-select;
+    }
+
+    &.input-checkbox {
+      > label {
+        > input {
+          @extend .form-check-input;
+          float: left;
+          width: rem(15px) !important;
+          margin-right: rem(15px);
+        }
+      }
+    }
+  }
+
+  .em-attendee-fieldset {
+    border: rem(1px) solid $gray-500;
+    padding: rem(15px);
+    margin-bottom: rem(15px);
+
+    &:before {
+      content: 'Attendee details';
+      display: block;
+      height: 40px;
+      width: 100%;
+      @extend h3;
+    }
+
+    .em-attendee-fields {
+      border-bottom: rem(1px) solid $gray-500;
+      margin-bottom: rem(15px);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .em-attendee-fields-template {
+    display: block !important;
+
+    > * {
+      display: none;
+    }
+
+    &:after {
+      content: 'Your details';
+      display: block;
+      height: 40px;
+      width: 100%;
+      @extend h3;
+    }
+  }
+}

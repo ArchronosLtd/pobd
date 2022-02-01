@@ -1,0 +1,135 @@
+.user-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $gray-200;
+  z-index: 50;
+
+  border: rem(3px) solid $gray-400;
+  border-top: none;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+      display: inline-block;
+      padding: 0 rem(5px);
+    }
+  }
+}
+
+.dropend .dropdown-toggle::after {
+  position: absolute;
+  right: rem(15px);
+  top: rem(17px);
+}
+
+#main-nav {
+  .dropdown-menu {
+    border-radius: 0;
+  }
+  
+  .menu-item {
+    border-radius: 0;
+  }
+
+  .stretched-link:after {
+    border: 0;
+  }
+
+  .dropdown-toggle {
+    position: relative;
+
+    &:before {
+      content: ' ';
+      position: absolute;
+
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;  
+
+      top: rem(20px);
+      right: rem(-15px);
+    }
+
+  }
+  
+  .dropdown-menu-end {
+    .dropdown-toggle {
+      &:before {
+        border-top: 0.3em solid transparent;
+        border-right: 0;
+        border-bottom: 0.3em solid transparent;
+        border-left: 0.3em solid;
+
+        right: 0;
+        top: rem(13px);
+      }
+    }
+  }
+
+  .dropdown-item > a {
+    padding-left: 0 !important;
+  }
+
+  .nav-link {
+    display: inline-block;
+  }
+
+  > ul {
+    display: flex;
+    justify-content: center;
+    
+    > li {
+      display: inline-block;
+      text-align: center;
+      flex: 1 1;
+      height: rem(45px);
+      line-height: rem(27px);
+      font-size: 105%;
+
+      &.active {
+        background: $primary;
+        
+        > a {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-between(xs, sm) { 
+  #masthead {
+    padding-bottom: rem(15px);
+  }
+
+  #main-nav {
+    padding: 0 rem(15px);
+  }
+
+  #menu-toggle {
+    transition: $tranistion-all;
+    position: fixed;
+    top: rem(270px);
+  }
+
+  #page.scrolled {
+    #menu-toggle {
+      position: fixed;
+      top: rem(25px);
+    }
+  }
+}
+
+@include media-breakpoint-between(sm, lg) { 
+  #menu-toggle {
+    transition: $tranistion-all;
+    position: fixed;
+    top: rem(150px);
+    right: rem(40px);
+  }
+}

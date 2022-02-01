@@ -1,0 +1,51 @@
+/*!
+Theme Name: St. Mark's 2021
+Theme URI: https://saintmarks.org.uk/theme
+Author: Steve Coleman-Williams
+Author URI: https://stevecolemanwilliams.com
+Description:  theme for st amrks church kemshott 2021
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Requires at least: 4.7
+Requires PHP: 5.2.4
+Tested up to: 5.4
+Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, custom-background, e-commerce, theme-options, sticky-post, full-width-template
+*/
+
+
+@import './variables';
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import './function';
+@import './header';
+@import './menu';
+@import './top-menu';
+@import './banner';
+@import './news';
+@import './feature-block';
+@import './event-list';
+@import './footer';
+@import './overrides';
+@import './search-widget';
+@import './widgets';
+@import './buttons';
+@import './bookings_form';
+@import './scrollbar';
+@import './blockquote';
+@import './calendar';
+
+.row {
+  margin-bottom: rem(15px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.btn-solid-back {
+  background: rgba($white, 0.5);
+}
+
+.modal-title:first-child:first-letter {
+  text-transform: capitalize;
+}

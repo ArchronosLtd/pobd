@@ -1,0 +1,9 @@
+{
+  "name": "Parish of Basingstoke Down",
+  "short_name": "Basingstoke Down",
+  "theme_color": "#349946",
+  "background_color": "#ffffff",
+  "display": "fullscreen",
+  "scope": "/",
+  "start_url": "https://www.parishofbasingstokedown.org.uk"
+}

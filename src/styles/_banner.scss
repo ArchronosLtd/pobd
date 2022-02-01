@@ -1,0 +1,32 @@
+#page-sub-header {
+  height: rem(600px);
+  position: relative;
+  
+  > .container {
+    & > #banner-content {
+      position: absolute;
+      z-index: 5;
+
+      padding: rem(175px) rem(15px) 0 rem(15px);
+
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      background: rgba(255, 255, 255, 0.3);
+
+      > h1 {
+        color: $primary;
+      }
+
+      > p {
+        color: #fff;
+      }
+
+      > h1, p {
+        text-shadow: rem(1px) rem(1px) rem(2px) $black;
+      }
+    }
+  }
+}

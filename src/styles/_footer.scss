@@ -1,0 +1,33 @@
+footer {
+  padding-top: rem(15px);
+  margin-top: rem(15px);
+  background: $secondary;
+  color: $white;
+  line-height: rem(32px);
+
+  h3 {
+    color: $white;
+  }
+
+  dt, dd {
+    margin-bottom: 0;
+  }
+
+  dt {
+    float: left;
+    margin-right: rem(5px);
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+#colophon {
+  background: $gray-300;
+  padding: rem(15px) 0;
+}

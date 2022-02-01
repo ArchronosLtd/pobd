@@ -1,0 +1,79 @@
+#top-menu {
+  border-bottom: rem(2px) solid $primary;
+
+  .btn:hover > a,
+  a:hover {
+    color: $white !important;
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+	.dropdown-menu li { 
+    position: relative !important; 	
+  }
+	
+  .nav-item .submenu { 
+		display: none;
+		position: absolute;
+		left:100%; top:-7px;
+	}
+  
+	.nav-item .submenu-left{ 
+		right:100%; 
+    left:auto;
+	}
+  
+	.dropdown-menu > li:hover > .submenu { 
+    display: block; 
+  }
+}	
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+  .dropdown-menu .dropdown-menu{
+    margin-right: .7rem; 
+    margin-bottom: .5rem;
+    display: block;
+  }
+}	
+/* ============ small devices .end// ============ */
+
+@include media-breakpoint-between(xs, md) { 
+  .hidden-mobile-menu {
+    display: none;
+  }
+
+  #page {
+    #top-menu {
+      position: fixed;
+      z-index: 15;
+      top: 0;
+      left: 0;
+      right: 0;
+      transition: $tranistion-all;
+      padding: 0;
+      background: $white;
+
+      .btn {
+        border: none;
+      }
+
+      #menu-top-menu {
+        width: 100%;
+        padding-left: 0;
+      }
+    }
+
+    &.scrolled {
+      #top-menu {
+        top: rem(-62px);
+      }
+    }
+  }
+}

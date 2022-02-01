@@ -1,0 +1,230 @@
+$header-height: rem(120px);
+
+header#masthead {
+  background-color: $white !important;
+  box-shadow: none;
+  border-bottom: rem(2px) solid #e5e5e5;
+  
+  .container {
+    position: relative;
+  }
+
+  .menu-toggle {
+    line-height: rem(75px);
+  }
+
+  a {
+    text-decoration: none;
+
+    #logo {
+      height: $header-height;
+      float: left;
+    }
+
+    h1 {
+      height: $header-height;
+      padding-top: rem(30px);
+      
+      span{
+        display: block;
+        font-weight: 200;
+        font-size: 80%;
+      } 
+    }
+  }
+
+  #top-menu {
+    ul {
+      padding: 0;
+      margin: 0;
+      text-align: right;
+      height: $header-height;
+
+      li {
+        display: inline;
+
+        a {
+          color: $gray-400;
+          display: inline;
+          line-height: $header-height;
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  background: #F8F7F3;
+
+  a {
+    color: #5e5e5e;
+  }
+
+  #main-nav {
+    justify-content: center !important;
+  }
+}
+
+#page-sub-header {
+  margin-bottom: rem(15px);
+
+  .carousel {
+    .carousel-item {
+      .player-controls {
+        transition: all 0.2s linear;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: rgba($primary, 0.5);
+        right: 0;
+
+        .hidden {
+          display: none;
+        }
+      }
+
+      > .playing {
+        .banner-badge,
+        .player-controls {
+          opacity: 0;
+        }
+
+        &:hover {
+          .banner-badge,
+          .player-controls {
+            opacity: 1;
+          }
+        }
+      }
+
+      .banner-badge {
+        position: absolute;
+        top: rem(15px); 
+        right: rem(25px);
+
+        &.live {
+          background: $primary;
+          color: $white;
+          padding: rem(5px);
+          border-radius: rem(4px);
+        }
+      }
+
+      img {
+        object-fit: cover;
+      }
+
+      .carousel-caption {
+        font-size: rem(40px);
+        font-weight: bold;
+        letter-spacing: rem(2px);
+        left: 0;
+        bottom: 0;
+        background: $title-banner;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline !important;
+          }
+
+          &.btn {
+            margin-top: rem(15px);
+          }
+        }
+      }
+    }
+  }
+}
+
+#post-header,
+#page-header {
+  background: $secondary;
+  overflow: hidden;
+  max-height: rem(600px);
+  margin-bottom: rem(15px);
+  
+  img {
+    object-fit: cover;
+  }
+}
+
+@include media-breakpoint-between(xs, md) { 
+  #page {
+    padding-top: rem(277px);
+
+    &.scrolled {      
+      #logo-wrapper {
+        margin-bottom: 0;
+      }
+      
+      header#masthead {
+        padding-bottom: 0;
+        top: rem(2px);
+
+        #logo {
+          height: 50px !important;
+        }
+
+        h1 {
+          font-size: 75%;
+        }
+      }
+
+      nav.navbar {
+        top: 88px !important;
+      }
+    }
+
+    header#masthead {
+      position: fixed;
+      top: rem(45px);
+      left: 0;
+      right: 0;
+      z-index: 10;
+      padding-bottom: rem(45px);
+
+      a {
+        text-align: center;
+        display: block;
+
+        #logo {
+          height: rem(150px);
+          float: none;
+          transition: $tranistion-all;
+        }
+
+        h1 {
+          padding-top: 0;
+          height: auto;
+          transition: $tranistion-all;
+        }
+      }
+    }
+
+    nav.navbar {
+      position: fixed;
+      top: rem(325px);
+      width: 100%;
+      z-index: 10;
+      transition: top 0.2s linear;
+    }
+
+    #page-sub-header {
+      max-height: rem(200px);
+
+      .carousel {
+        .carousel-item {
+          .carousel-caption {
+            font-size: rem(18px);
+            padding: 0;
+            height: rem(40px);
+            line-height: rem(40px);
+          }
+        }
+      }
+    }
+  }
+}

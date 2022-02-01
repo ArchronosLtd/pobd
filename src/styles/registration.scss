@@ -1,0 +1,62 @@
+@import './function';
+
+@import './variables';
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.wizard-step {
+  &:first-child {
+    border-bottom-left-radius: 0;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: 0;
+  }
+}
+
+#sign-up-wizard {
+  border: rem(1px) solid $primary;
+  border-top: none;
+
+  .alert {
+    border-radius: 0;
+  }
+
+  .wizard-actions {
+    border-top: rem(1px) solid $primary;
+  }
+}
+
+.form-control {
+  &.supplementary {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+.form-check {
+  &.secondary {
+    margin-left: rem(15px);
+  }
+}
+
+.form-text.error-text {
+  display: none;
+}
+
+.error {
+  > .form-text {
+    display: none;
+
+    &.error-text {
+      display: block;
+    }
+  }
+
+  > label, > div {
+    color: $danger;
+  }
+
+  > input {
+    border-color: $danger;
+  }
+}

@@ -1,0 +1,29 @@
+.wp-block-button.bs-btn {
+  > a {
+    @extend .btn;
+  }
+
+  &.bs-btn-primary {
+    > a {
+      @extend .btn-primary;
+    }
+  }
+
+  &.bs-btn-outline-primary {
+    > a {
+      @extend .btn-outline-primary;
+    }
+  }
+
+  &.bs-btn-secondary {
+    > a {
+      @extend .btn-secondary;
+    }
+  }
+
+  &.bs-btn-outline-secondary {
+    > a {
+      @extend .btn-outline-secondary;
+    }
+  }
+}

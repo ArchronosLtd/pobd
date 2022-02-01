@@ -1,0 +1,48 @@
+#frontpage-widget-area {
+  .wp-block-column {
+    margin-left: 0;
+  }
+}
+
+.feature-block {
+  background-size: cover;
+  background-position: center center;
+  background-color: $secondary;
+  height: rem(249px);
+  overflow: hidden;
+
+  color: $white;
+
+  .feature-content {
+    position: relative;
+
+    .widgettitle {
+      position: absolute;
+      bottom: rem(-8px);
+      left: rem(-12px);
+      right: rem(-12px);
+      background: $title-banner;
+      height: rem(55px);
+      line-height: rem(55px);
+      padding-left: rem(15px);
+
+      > a {
+        font-size: 90%;
+        color: $white;
+        padding: rem(5px) rem(15px);
+        display: inline-block;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline !important;
+        }
+      }
+
+      > .btn {
+        margin-top: rem(8px);
+        margin-right: rem(5px);
+        color: $white;
+      }
+    }
+  }
+}
