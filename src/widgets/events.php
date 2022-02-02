@@ -60,7 +60,8 @@ class FutureEvents extends WP_Widget {
                 $metaData = get_post_meta($location->post_id, 'arch_location_logo', true);
                 $attachment = intval($metaData);
                 $image = wp_get_attachment_image_src($attachment, 'event-saintmarks-thumbnail', false, array('class' => 'p-1 w-100'));
-                $startDate = new DateTime ($event->event_start_date);
+                $startDate = new DateTime ($event->event_start_date . ' ' . $event->start_time);
+                $endDate = new DateTime ($event->event_end_date . ' ' . $event->end_time);
 
                 echo '<a href="' . get_the_permalink($event->post_id) .'" class="row event" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Event at ' . $location->name .'">';
                   echo '<div class="col date h-100 px-0">';
@@ -82,7 +83,7 @@ class FutureEvents extends WP_Widget {
 
                   echo '<div class="col details h-100 text-truncate">';
                     echo '<h2 class="py-0 my-0">' . $event->event_name . '</h2>';
-                    echo '<span>10.00 - 10.30</span>';
+                    echo '<span>' . $startDate->format('H:i') . ' - ' . $endDate->format('H:i') . '</span>';
                   echo '</div>';
                 echo '</a>';
               }
