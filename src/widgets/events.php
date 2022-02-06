@@ -71,7 +71,7 @@ class FutureEvents extends WP_Widget {
 
                   if ($image && $showIcon) {
                     echo '<div class="col thumbnail h-100 d-flex align-items-center justify-content-center p-1">';
-                      echo '<img src="' . wp_get_attachment_image_src($attachment, 'event-saintmarks-thumbnail', false, array('class' => 'p-1 w-100'))[0] . '" class="p-1 w-100" />';
+                      echo '<img alt="Logo of ' . $location->name . '" src="' . wp_get_attachment_image_src($attachment, 'event-saintmarks-thumbnail', false, array('class' => 'p-1 w-100'))[0] . '" class="p-1 w-100" />';
                     echo '</div>';
                   }
                   

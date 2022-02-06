@@ -61,7 +61,9 @@ class NewsScroller extends WP_Widget {
                   
                   echo '<div class="news-item">';
                     echo '<a href="' . $link . '" class="feature-image d-flex align-items-center justify-content-center">';
-                      echo the_post_thumbnail('post-saintmarks-news-reel', array('class' => 'w-100 h-auto'));
+                      echo the_post_thumbnail('post-saintmarks-news-reel', array(
+                        'class' => 'w-100 h-auto'
+                      ));
                     echo '</a>';
                   
                     echo '<a href="' . $link . '" class="details excerpt d-block justify-content-center">';
