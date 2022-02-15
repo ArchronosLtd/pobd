@@ -1,0 +1,90 @@
+$cookie-height: rem(100px);
+
+@keyframes slidedown {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 0 - $cookie-height;
+  }
+}
+
+#cookie-banner {
+  position: fixed;
+  display: none;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $cookie-height;
+  background: $white;
+  border-top: 5px solid $primary;
+  z-index: 5;
+
+  &.hiding {
+    animation: slidedown 0.2s forwards;
+
+    &:after {
+      animation: slidedown 0.2s forwards;
+    }
+  }
+
+  &:after {
+    content: ' ';
+    position: fixed;
+    bottom: $cookie-height;
+    height: rem(1px);
+    background: $white;
+    left: 0;
+    right: 0;
+    z-index: 5;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+
+#cookie-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  content: ' ';
+  background: rgba($black, 0.2);
+  z-index: 1;
+
+  &.hiding {
+    animation: fadeout 0.2s forwards;
+  }
+}
+
+#cookie-banner,
+#cookie-overlay {
+  &.visible {
+    display: block;
+  }
+}
+
+@include media-breakpoint-between(xs, sm) { 
+  $cookie-height: rem(300px);
+
+  #cookie-banner {
+    height: $cookie-height;
+
+    &:after {
+      bottom: $cookie-height;
+    }
+  }
+}

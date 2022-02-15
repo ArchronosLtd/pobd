@@ -22,6 +22,12 @@
   max-height: 302px;
   overflow: hidden;
 
+  &:hover {
+    .details {
+      background-color: $green;
+    }
+  }
+
   &:last-child {
     margin-right: 0;
   }
@@ -49,9 +55,9 @@
   .details {
     flex: 1 1;
     padding: rem(15px);
-    background-color: #eee;
+    background-color: $brand-grey;
     text-decoration: none;
-    color: var(--bs-dark);
+    color: $secondary;
     height: rem(100px);
 
     P {

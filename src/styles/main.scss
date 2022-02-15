@@ -15,7 +15,9 @@ Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, 
 
 
 @import './variables';
+@import './block-colors';
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import './404';
 @import './function';
 @import './header';
 @import './menu';
@@ -33,6 +35,7 @@ Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, 
 @import './scrollbar';
 @import './blockquote';
 @import './calendar';
+@import './cookies';
 
 .row {
   margin-bottom: rem(15px);
@@ -48,4 +51,11 @@ Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, 
 
 .modal-title:first-child:first-letter {
   text-transform: capitalize;
+}
+
+h1,
+h2, 
+h3,
+h4 {
+  font-weight: 300;
 }

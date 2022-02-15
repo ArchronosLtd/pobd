@@ -30,6 +30,7 @@ $sticky_query = new WP_Query($args);
 
   <link rel="stylesheet" onload="this.onload=null;this.removeAttribute('media');" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
 
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YBGPTFSQWM"></script>
   <script>
@@ -148,7 +149,7 @@ $sticky_query = new WP_Query($args);
                   <?php echo the_post_thumbnail('post-saintmarks-mobile-header', array('class' => 'd-sm-block d-md-none w-100')); ?>
                   <div class="carousel-caption d-xs-block w-100">
                     <div class="container">
-                      <a class="float-md-start d-sm-block d-md-inline" href="<?php echo get_post_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                      <a class="float-md-start d-sm-block d-md-inline stretched-link" href="<?php echo get_post_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                       <a class="float-end btn btn-outline-info d-none d-md-block" href="<?php echo get_post_permalink(); ?>" title="Read more">Read more <i class="fal fa-chevron-right"></i></a>
                     </div>
                   </div>
@@ -199,5 +200,3 @@ $sticky_query = new WP_Query($args);
         </div>
       </div>
     <?php endif; ?>
-
-    

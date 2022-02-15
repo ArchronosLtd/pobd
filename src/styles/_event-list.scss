@@ -26,21 +26,21 @@
 }
 
 .event {
-  $border: rem(1px) solid $white;
-
   height: rem(50px);
-  border: $border;
   color: $white;
   text-decoration: none;
   transition: background-color 0.2s ease-in-out;
+  background: $primary;
 
   &:hover {
     background: $white;
-    border-color: $primary;
+    background: $green;
+    color: $primary;
 
     > .date,
     > .thumbnail {
-      border-color: $primary;
+      border-color: $green;
+      color: $secondary;
     }
   }
 
@@ -48,7 +48,6 @@
     width: rem(50px);
     text-align: center;
     flex: 0 0 auto;
-    border-right: $border;
     background: rgba($white, 0.3);
 
     > span {
@@ -60,7 +59,6 @@
     flex: 0 0 auto;
     width: rem(50px);
     overflow: hidden;
-    border-right: $border;
   }
 
   > .details {

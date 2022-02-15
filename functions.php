@@ -1,5 +1,8 @@
 <?php
 
+define('SAINT_MARKS_DIR', __DIR__);
+define('NEWSLETTER_LOG_LEVEL', 4);
+
 include_once('src/metaboxes/meta_box.php');
 
 require_once('src/types/sermon/meta-box.php');
@@ -7,6 +10,7 @@ require_once('src/types/sermon/meta-box.php');
 require_once('src/extensions/em.php');
 require_once('src/extensions/wordpress-menu.php');
 require_once('src/extensions/topmenu-walker.php');
+require_once('src/extensions/newsletter.php');
 require_once('src/types/location/meta-box.php');
 require_once('src/types/all/message-metabox.php');
 require_once('src/widgets/events.php');
@@ -94,8 +98,10 @@ function theme_enqueue_scripts()
     wp_register_script('bootstrap', ("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"), array('popper'), false);
     wp_register_script( 'youtube', 'https://www.youtube.com/iframe_api', array(), '1.0.0' );
     wp_register_script( 'livestream', get_template_directory_uri() . '/src/scripts/live-video.js', array('youtube'), '1.0.0' );
+    wp_register_script( 'cookies', get_template_directory_uri() . '/src/scripts/cookie-banner.js', array('bootstrap'), '1.0.0' );
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('saintmarks_dynamic_effects');
+    wp_enqueue_script('cookies');
 
     $eventDetails = liveEvent();
     if($eventDetails['isLive'] && get_post_type() != 'event') {

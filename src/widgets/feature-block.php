@@ -45,7 +45,7 @@ class FeatureBlock extends WP_Widget {
         echo '<div class="row h-100">';
 
           echo '<div class="col h-100 feature-content">';
-            echo $args['before_title'] . '<a class="p-0" style="font-size: 100%;" href="' . $instance['link'] . '">' . apply_filters( 'widget_title', $instance['title'] ) . '</a>' . $args['after_title'];
+            echo $args['before_title'] . '<a class="p-0 stretched-link" style="font-size: 100%;" href="' . $instance['link'] . '">' . apply_filters( 'widget_title', $instance['title'] ) . '</a>' . $args['after_title'];
           echo '</div>';
 
         echo '</div>';

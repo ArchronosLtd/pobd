@@ -50,3 +50,25 @@
 <?php endif; ?>
 
 <?php wp_footer(); ?>
+
+<div id="cookie-overlay"></div>
+
+<div id="cookie-banner" class="p-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <p>
+          This website uses cookies, inline with our <a href="<?php echo get_privacy_policy_url(); ?>">privacy policy</a> to ensure that you, our users, get the best out of this website.
+        </p>
+
+        <p>
+          Please don't hesitate to contact us, if you have any questions.
+        </p>
+      </div>
+
+      <div class="col-sm-2">
+        <button class="btn btn-primary">I understand</button>
+      </div>
+    </div>
+  </div>
+</div>

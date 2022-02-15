@@ -26,6 +26,7 @@ $calendar-border: rem(1px) solid $black;
   }
   
   .eventful,
+  .eventful-today,
   .eventful-post {
     position: relative;
 
@@ -44,7 +45,7 @@ $calendar-border: rem(1px) solid $black;
       &:hover {
         height: auto;
         height: auto;
-        border: 2px solid #0dcaf0;
+        border: 2px solid $info;
         overflow: visible;
         z-index: 5;
 
@@ -126,19 +127,31 @@ $calendar-border: rem(1px) solid $black;
 
     tr:not(.days-names,thead>tr) {
       height: auto;
+      
+      td {
+        display: block;
+
+        &.eventless {
+          display: none;
+        }
+      }
     }
 
     .eventless-pre, 
     .eventless-post,
     .eventful-pre,
     .eventful-post {
-      display: none;
+      display: none !important;
     }
 
     td {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+
       &.eventless,
       &.eventless-today {
-        display: none;
+        display: none !important;
       }
 
       &.eventful {
@@ -168,6 +181,7 @@ $calendar-border: rem(1px) solid $black;
     thead {
       tr {
         display: flex;
+        border-bottom: rem(1px) solid $black;
 
         td {
           flex: 1 1;

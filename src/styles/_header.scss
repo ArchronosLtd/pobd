@@ -13,12 +13,16 @@ header#masthead {
     line-height: rem(75px);
   }
 
-  a {
-    text-decoration: none;
-
-    #logo {
-      height: $header-height;
-      float: left;
+  #logo-wrapper {
+    font-family: 'Montserrat', sans-serif;
+    
+    a {
+      text-decoration: none;
+      
+      #logo {
+        height: $header-height;
+        float: left;
+      }
     }
 
     h1 {
@@ -121,17 +125,29 @@ header#masthead {
         left: 0;
         bottom: 0;
         background: $title-banner;
+        color: $secondary;
+        transition: $tranistion-all;
+
+        &:hover {
+          background-color: $green;
+
+          a.btn {
+            color: $secondary;
+          }
+        }
 
         a {
-          color: #fff;
+          color: $brand-grey;
           text-decoration: none;
 
           &:hover {
             text-decoration: underline !important;
+            color: inherit;
           }
 
           &.btn {
             margin-top: rem(15px);
+            transition: $tranistion-all;
           }
         }
       }

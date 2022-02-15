@@ -25,13 +25,21 @@
       height: rem(55px);
       line-height: rem(55px);
       padding-left: rem(15px);
+      color: $brand-grey;
+
+      transition: $tranistion-all;
+
+      &:hover {
+        background: $green;
+        color: $primary;
+      }
 
       > a {
         font-size: 90%;
-        color: $white;
         padding: rem(5px) rem(15px);
         display: inline-block;
         text-decoration: none;
+        color: inherit;
 
         &:hover {
           text-decoration: underline !important;
