@@ -1,3 +1,5 @@
+let progressTimer = null;
+
 window.addEventListener('load', function() {
   setupLiveVideo();
 });
@@ -13,7 +15,40 @@ function getVideoId() {
 }
 
 function setupLiveVideo() {
+  const scrobbler = document.querySelector('#track');
+
+  function scrobblerinteract(cb) {
+    if(scrobbler) {
+      cb();
+    }
+  }
+
   function onPlayerReady(event) {
+    scrobblerinteract(() => {
+      setInterval(function() {
+        if(player.getPlayerState() === YT.PlayerState.PLAYING) {
+          document.querySelector('[type="range"]').value = player.getCurrentTime();
+        }
+      }, 1000);  
+    });
+    scrobblerinteract(() => {
+      scrobbler.addEventListener('change', (e) => {
+        player.seekTo(e.target.value, true);
+      });
+    });
+
+    scrobblerinteract(() => {
+      scrobbler.addEventListener('mousedown', (e) => {
+        player.pauseVideo();
+      });
+    });
+
+    scrobblerinteract(() => {
+      scrobbler.addEventListener('mouseup', (e) => {
+        player.playVideo();
+      });
+    });
+
     document.querySelector('#play').addEventListener('click', function() {
       player.playVideo();
     });
@@ -47,7 +82,12 @@ function setupLiveVideo() {
 
   function onPlayerStateChange(e) {
     if (e.data == YT.PlayerState.PLAYING) {
+      document.querySelector('[type="range"]').max = player.getDuration();
       document.querySelector('#pause').classList.remove('hidden');
+      document.querySelector('#pause').classList.remove('hidden');
+      scrobblerinteract(() => {
+        scrobbler.classList.remove('hidden');
+      });
       document.querySelector('#mute').classList.remove('hidden');
       document.querySelector('#fullscreen').classList.remove('hidden');
       document.querySelector('#play').classList.add('hidden');
@@ -70,7 +110,8 @@ function setupLiveVideo() {
     playerVars: {
       playsinline: 1,
       modestbranding: 1,
-      controls: 0
+      controls: 0,
+      rel: 0
     },
     events: {
       'onReady': onPlayerReady,

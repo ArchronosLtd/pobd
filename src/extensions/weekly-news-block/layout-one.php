@@ -67,6 +67,7 @@ $text_style = TNP_Composer::get_style($options, '', $composer, 'text');
 
         $button_options['button_url'] = $url;
         $button_options['button_align'] = 'left';
+        $button_options['button_label'] = 'View online';
         ?>
 
         <tr>
@@ -111,9 +112,11 @@ $text_style = TNP_Composer::get_style($options, '', $composer, 'text');
                                         <td align="<?php echo $align_left ?>" inline-class="excerpt" class="tnpc-row-edit tnpc-inline-editable"
                                             data-type="text" data-id="<?php echo $post->ID ?>" dir="<?php echo $dir ?>">
                                                 <?php
-                                                echo TNP_Composer::is_post_field_edited_inline($options['inline_edits'], 'text', $post->ID) ?
-                                                        TNP_Composer::get_edited_inline_post_field($options['inline_edits'], 'text', $post->ID) :
-                                                        tnp_post_excerpt($post, $excerpt_length)
+                                                    $content_post = get_post($post->ID);
+                                                    $content = strip_shortcodes($content_post->post_content);
+                                                    $content = apply_filters('the_content', $content);
+                                                    $content = str_replace(']]>', ']]&gt;', $content);
+                                                    echo $content;
                                                 ?>
                                         </td>
                                     </tr>

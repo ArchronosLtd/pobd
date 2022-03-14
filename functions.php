@@ -1,5 +1,5 @@
 <?php
-
+$version = '1.0.4';
 define('SAINT_MARKS_DIR', __DIR__);
 define('NEWSLETTER_LOG_LEVEL', 4);
 
@@ -96,9 +96,9 @@ function theme_enqueue_scripts()
 {
     wp_register_script('popper', ("https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"), false);
     wp_register_script('bootstrap', ("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"), array('popper'), false);
-    wp_register_script( 'youtube', 'https://www.youtube.com/iframe_api', array(), '1.0.0' );
-    wp_register_script( 'livestream', get_template_directory_uri() . '/src/scripts/live-video.js', array('youtube'), '1.0.0' );
-    wp_register_script( 'cookies', get_template_directory_uri() . '/src/scripts/cookie-banner.js', array('bootstrap'), '1.0.0' );
+    wp_register_script( 'youtube', 'https://www.youtube.com/iframe_api', array(), '1.0.2' );
+    wp_register_script( 'livestream', get_template_directory_uri() . '/src/scripts/live-video.js', array('youtube'), '1.0.2' );
+    wp_register_script( 'cookies', get_template_directory_uri() . '/src/scripts/cookie-banner.js', array('bootstrap'), '1.0.2' );
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('saintmarks_dynamic_effects');
     wp_enqueue_script('cookies');
@@ -125,18 +125,18 @@ function theme_enqueue_scripts()
         wp_enqueue_script('saintmarks_message_modal');
     }
     
-    wp_register_style('saintmarks', get_template_directory_uri() . '/style.css', array(), '1.0');
+    wp_register_style('saintmarks', get_template_directory_uri() . '/style.css', array(), '1.0.2');
     wp_enqueue_style('saintmarks');
 
 }
 
 function front_end_scripts()
 {
-    wp_register_script('saintmarks_registration', get_template_directory_uri() . '/src/scripts/registration.js', array(), true);
-    wp_register_style('saintmarks_registration', get_template_directory_uri() . '/registration.css', array(), '1.0', 'screen');
+    wp_register_script('saintmarks_registration', get_template_directory_uri() . '/src/scripts/registration.js', array(), '1.0.2');
+    wp_register_style('saintmarks_registration', get_template_directory_uri() . '/registration.css', array(), '1.0.2', 'screen');
 
-    wp_register_script('saintmarks_dynamic_effects', get_template_directory_uri() . '/src/scripts/dynamisim.js', array('bootstrap'), true);
-    wp_register_script('saintmarks_message_modal', get_template_directory_uri() . '/src/scripts/message-modal.js', array('bootstrap'), true);
+    wp_register_script('saintmarks_dynamic_effects', get_template_directory_uri() . '/src/scripts/dynamisim.js', array('bootstrap'), '1.0.2');
+    wp_register_script('saintmarks_message_modal', get_template_directory_uri() . '/src/scripts/message-modal.js', array('bootstrap'), '1.0.2');
 }
 add_action('wp_enqueue_scripts', 'front_end_scripts');
 
@@ -145,7 +145,7 @@ add_action('admin_enqueue_scripts', 'theme_enqueue_admin_scripts', 500);
 function theme_enqueue_admin_scripts($hook)
 {
     wp_register_script('tinyMCE', 'https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js');
-    wp_register_script('tinyMCELoad', get_template_directory_uri() . '/src/scripts/tiny-mce-init.js', array('tinyMCE'), true);
+    wp_register_script('tinyMCELoad', get_template_directory_uri() . '/src/scripts/tiny-mce-init.js', array('tinyMCE'), '1.0.2');
     wp_enqueue_script('events-manager');
     wp_enqueue_script('tinyMCELoad');
 }

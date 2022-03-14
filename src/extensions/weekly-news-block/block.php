@@ -112,7 +112,7 @@ if ($posts) {
 
 $newposts = [];
 foreach($posts as $post) {
-    if(strtotime($post->post_date) > strtotime('-7 day') ) {
+    if(strtotime($post->post_date) > strtotime('-6 day') ) {
         $newposts[] = $post;
     }
 }

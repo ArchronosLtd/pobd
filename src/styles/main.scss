@@ -4,15 +4,14 @@ Theme URI: https://saintmarks.org.uk/theme
 Author: Steve Coleman-Williams
 Author URI: https://stevecolemanwilliams.com
 Description:  theme for st amrks church kemshott 2021
-Version: 0.0.1
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Requires at least: 4.7
+Requires at least: 5.9
 Requires PHP: 5.2.4
-Tested up to: 5.4
+Tested up to: 5.9
 Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, custom-background, e-commerce, theme-options, sticky-post, full-width-template
 */
-
 
 @import './variables';
 @import './block-colors';
@@ -36,6 +35,7 @@ Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, 
 @import './blockquote';
 @import './calendar';
 @import './cookies';
+@import './range';
 
 .row {
   margin-bottom: rem(15px);

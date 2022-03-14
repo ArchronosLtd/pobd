@@ -67,7 +67,7 @@
       </div>
 
       <div class="col-sm-2">
-        <button class="btn btn-primary">I understand</button>
+        <button class="btn btn-primary" data-testid="agree-cookie">I understand</button>
       </div>
     </div>
   </div>

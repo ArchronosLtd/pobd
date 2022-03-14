@@ -85,6 +85,12 @@ class FutureEvents extends WP_Widget {
                     echo '<h2 class="py-0 my-0">' . $event->event_name . '</h2>';
                     echo '<span>' . $startDate->format('H:i') . ' - ' . $endDate->format('H:i') . '</span>';
                   echo '</div>';
+
+                  if(isset($event->rsvp)) {
+                    echo '<div class="col book-button h-100 px-0 d-flex align-items-center justify-content-center">';
+                      echo '<span class="btn btn-outline-success">Book</span>';
+                    echo '</div>';
+                  }
                 echo '</a>';
               }
             echo '</div>';

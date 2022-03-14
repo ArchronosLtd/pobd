@@ -193,6 +193,7 @@ $sticky_query = new WP_Query($args);
                     <button type="button" class="btn btn-primary hidden" id="mute"><i class="fad fa-volume-mute"></i><i class="fad fa-volume hidden"></i></button>
                     <button type="button" class="btn btn-primary hidden" id="fullscreen"><i class="fad fa-expand-arrows"></i></button>
                   </div>
+                  <input type="range" min="0" max="100" value="0" id="track" class="form-range hidden" id="customRange1">
                 </div>
               </div>
             </div>
